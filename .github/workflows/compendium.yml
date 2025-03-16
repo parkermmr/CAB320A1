@@ -1,0 +1,21 @@
+name: Search Project CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  Compendium:
+    if: github.ref == 'refs/heads/main'
+    uses: parkermmr/compendium/.github/workflows/compendium-python.yml@main
+    with:
+      python-version: "3.11"
+      repo: "${{ vars.DOCKER_REPO }}/${{ vars.REPOSITORY }}"
+      ref-name: ${{ github.ref_name }}
+      sha: ${{ github.sha }}
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}

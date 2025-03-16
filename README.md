@@ -1,0 +1,2 @@
+![CI Status](https://github.com/parkermmr/cab320a1/actions/workflows/compendium.yml/badge.svg)
+[![Coverage](https://codecov.io/gh/parkermmr/cab320a1/branch/main/graph/badge.svg)](https://codecov.io/gh/parkermmr/cab320a1)
