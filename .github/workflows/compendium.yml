@@ -19,6 +19,7 @@ jobs:
       repo: "${{ vars.DOCKER_REPO }}/${{ vars.REPOSITORY }}"
       ref-name: ${{ github.ref_name }}
       sha: ${{ github.sha }}
+      src-directory: "src/"
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
