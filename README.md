@@ -52,23 +52,25 @@
 ## About The Project
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### Built With
 
-* [![Python][python]][python-url]
+<p align="center">
+  
+- [![Python][python]][python-url]
+- [![Jupyter][jupyter]][jupyter-url]
+- [![Git][git]][git-url]
+- [![GitHub Actions][github-actions]][github-actions-url]
+- [![Docker][docker]][docker-url]
 
+</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ### Installation
 
@@ -78,8 +80,6 @@
 
 ## Usage
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Acknowledgments:
 
@@ -103,3 +103,11 @@
 [issues-url]: https://github.com/parkermmr/CAB320A1/issues
 [python]: https://img.shields.io/badge/python-FFE873?style=for-the-badge&logo=python&logoColor
 [python-url]: https://www.python.org/
+[jupyter]: https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=white
+[jupyter-url]: https://jupyter.org/
+[git]: https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white
+[git-url]: https://git-scm.com/
+[github-actions]: https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=GitHub%20Actions&logoColor=white
+[github-actions-url]: https://github.com/features/actions
+[docker]: https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white
+[docker-url]: https://www.docker.com/
