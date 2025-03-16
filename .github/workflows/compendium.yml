@@ -10,6 +10,10 @@ jobs:
   Compendium:
     if: github.ref == 'refs/heads/main'
     uses: parkermmr/compendium/.github/workflows/compendium-python.yml@main
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
     with:
       python-version: "3.11"
       repo: "${{ vars.DOCKER_REPO }}/${{ vars.REPOSITORY }}"
