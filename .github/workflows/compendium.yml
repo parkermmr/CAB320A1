@@ -7,6 +7,7 @@ on:
   pull_request:
 
 jobs:
+
   Compendium:
     if: github.ref == 'refs/heads/main'
     uses: parkermmr/compendium/.github/workflows/compendium-python.yml@main
