@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import os
 import time
 import tkinter as tk
@@ -16,6 +14,10 @@ __author__ = "Frederic Maire"
 __version__ = "2.0"
 
 
+APP_ROOT = os.getcwd()
+APPLICATION_IMAGES = os.path.join(APP_ROOT, "database/images/application")
+
+
 try:
     from src.sokoban_solver import solve_weighted_sokoban
 
@@ -24,10 +26,6 @@ except ModuleNotFoundError:
     from src.sokoban_solver import solve_weighted_sokoban
 
     print("Using submitted solver")
-
-
-# directory where this file is located
-app_root_folder = os.getcwd()
 
 # creating tkinter root/main window
 root_window = tk.Tk()
@@ -47,17 +45,13 @@ direction_offset = {
 
 # dictionary of images for the display of the warehouse
 image_dict = {
-    "wall": tk.PhotoImage(file=os.path.join(app_root_folder, "images/wall.gif")),
-    "target": tk.PhotoImage(file=os.path.join(app_root_folder, "images/hole.gif")),
-    "box_on_target": tk.PhotoImage(
-        file=os.path.join(app_root_folder, "images/crate-in-hole.gif")
-    ),
-    "box": tk.PhotoImage(file=os.path.join(app_root_folder, "images/crate.gif")),
-    "worker": tk.PhotoImage(file=os.path.join(app_root_folder, "images/player.gif")),
-    "smiley": tk.PhotoImage(file=os.path.join(app_root_folder, "images/smiley.gif")),
-    "worker_on_target": tk.PhotoImage(
-        file=os.path.join(app_root_folder, "images/player-in-hole.gif")
-    ),
+    "wall": tk.PhotoImage(file=f"{APPLICATION_IMAGES}/wall.gif"),
+    "target": tk.PhotoImage(file=f"{APPLICATION_IMAGES}/hole.gif"),
+    "box_on_target": tk.PhotoImage(file=f"{APPLICATION_IMAGES}/crate-in-hole.gif"),
+    "box": tk.PhotoImage(file=f"{APPLICATION_IMAGES}/crate.gif"),
+    "worker": tk.PhotoImage(file=f"{APPLICATION_IMAGES}/player.gif"),
+    "smiley": tk.PhotoImage(file=f"{APPLICATION_IMAGES}/smiley.gif"),
+    "worker_on_target": tk.PhotoImage(file=f"{APPLICATION_IMAGES}/player-in-hole.gif"),
 }
 
 
@@ -162,9 +156,7 @@ def select_warehouse():
     """
     global frame, warehouse_path
     # frame.pack_forget() # todo: move this line to clear_level?!
-    warehouse_path = askopenfilename(
-        initialdir=os.path.join(app_root_folder, "warehouses")
-    )
+    warehouse_path = askopenfilename(initialdir=f"{APP_ROOT}/database/warehouses")
     print(f"Loading warehouse {warehouse_path}")
     start_level()
 
@@ -379,9 +371,7 @@ To print help on the console: press the 'h' key
 #  Create the GUI
 
 root_window.title("Weighted Sokoban")
-root_window.iconphoto(
-    False, tk.PhotoImage(file=os.path.join(app_root_folder, "images/crate.gif"))
-)
+root_window.iconphoto(False, tk.PhotoImage(file=f"{APPLICATION_IMAGES}/crate.gif"))
 
 
 # Creating Menubar

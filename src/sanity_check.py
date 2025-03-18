@@ -23,6 +23,7 @@ try:
 except ModuleNotFoundError:
     from sokoban_solver import (check_elem_action_seq, solve_weighted_sokoban,
                                 taboo_cells)
+
     print("Using submitted solver")
 
 
