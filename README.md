@@ -44,8 +44,12 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#compendium-ci">Compendium CI</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#compendium-ci">Compendium CI</a></li>
+      </ul>
+    </li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>

@@ -28,27 +28,39 @@ Last modified by 2021-08-17  by f.maire@qut.edu.au
 # You have to make sure that your code works with
 # the files provided (search.py and sokoban.py) as your code will be tested
 # with these files
-from src import search
+from enum import Enum
+
+from src.search import Problem
+from src.sokoban import Warehouse
+
+
+class Action(Enum):
+    LEFT = "Left"
+    DOWN = "Down"
+    RIGHT = "Right"
+    UP = "Up"
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-def my_team():
+def my_team() -> list[tuple]:
     """
     Return the list of the team members of this assignment submission as a list
     of triplet of the form (student_number, first_name, last_name)
 
     """
-    # return [ (1234567, 'Ada', 'Lovelace'),
-    #          (1234568, 'Grace', 'Hopper'),
-    #          (1234569, 'Eva', 'Tardos') ]
-    raise NotImplementedError()
+    return [
+        (11543043, "Parker", "Rennie"),
+        (12345678, "Zachariah", "Crawford"),
+        (12345678, "Joshua", "Hecke"),
+    ]
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-def taboo_cells(warehouse):
+def taboo_cells(warehouse: Warehouse) -> str:
     """
     Identify the taboo cells of a warehouse. A "taboo cell" is by definition
     a cell inside a warehouse such that whenever a box get pushed on such
@@ -79,7 +91,7 @@ def taboo_cells(warehouse):
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-class SokobanPuzzle(search.Problem):
+class SokobanPuzzle(Problem):
     """
     An instance of the class 'SokobanPuzzle' represents a Sokoban puzzle.
     An instance contains information about the walls, the targets, the boxes
@@ -101,7 +113,7 @@ class SokobanPuzzle(search.Problem):
     #
     #     You are allowed (and encouraged) to use auxiliary functions and classes
 
-    def __init__(self, warehouse):
+    def __init__(self, warehouse: Warehouse):
         raise NotImplementedError()
 
     def actions(self, state):
@@ -115,7 +127,7 @@ class SokobanPuzzle(search.Problem):
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-def check_elem_action_seq(warehouse, action_seq):
+def check_elem_action_seq(warehouse: Warehouse, action_seq: list[Action]) -> str:
     """
 
     Determine if the sequence of actions listed in 'action_seq' is legal or not.
@@ -140,14 +152,15 @@ def check_elem_action_seq(warehouse, action_seq):
     """
 
     #        "INSERT YOUR CODE HERE"
-
     raise NotImplementedError()
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-def solve_weighted_sokoban(warehouse):
+def solve_weighted_sokoban(
+    warehouse: Warehouse,
+) -> tuple[str, None] | tuple[list[Action], str]:
     """
     This function analyses the given warehouse.
     It returns the two items. The first item is an action sequence solution.
